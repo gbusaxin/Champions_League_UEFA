@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_news"
+        android:icon="@drawable/ic_baseline_home"
+        android:title="@string/news" />
+
+    <item
+        android:id="@+id/nav_matches"
+        android:icon="@drawable/ic_baseline_soccer"
+        android:title="@string/matches"/>
+
+    <item
+        android:id="@+id/nav_groups"
+        android:icon="@drawable/ic_baseline_list"
+        android:title="@string/groups"/>
+
+    <item
+        android:id="@+id/nav_players"
+        android:icon="@drawable/ic_baseline_star"
+        android:title="@string/players"/>
+
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/ic_baseline_more"
+        android:title="@string/more"/>
+
+</menu>

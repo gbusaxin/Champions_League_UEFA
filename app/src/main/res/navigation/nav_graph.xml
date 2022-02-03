@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_news">
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.example.championsleagueuefa.presentation.ui.news.NewsFragment"
+        android:label="@string/news"
+        tools:layout="@layout/news_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_matches"
+        android:name="com.example.championsleagueuefa.presentation.ui.matches.MatchesFragment"
+        android:label="@string/matches"
+        tools:layout="@layout/matches_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_groups"
+        android:name="com.example.championsleagueuefa.presentation.ui.groups.GroupsFragment"
+        android:label="@string/groups"
+        tools:layout="@layout/groups_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_players"
+        android:name="com.example.championsleagueuefa.presentation.ui.players.PlayersFragment"
+        android:label="@string/players"
+        tools:layout="@layout/players_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_more"
+        android:name="com.example.championsleagueuefa.presentation.ui.more.MoreFragment"
+        android:label="@string/more"
+        tools:layout="@layout/more_fragment"/>
+
+</navigation>
