@@ -8,6 +8,9 @@ import com.example.championsleagueuefa.domain.pojo.NewsItem
 import com.squareup.picasso.Picasso
 
 class NewsAdapter : ListAdapter<NewsItem, NewsViewHolder>(NewsDiffCallBack()) {
+
+    var onNewsClick:((NewsItem) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
             LayoutInflater.from(parent.context).inflate(
@@ -22,5 +25,8 @@ class NewsAdapter : ListAdapter<NewsItem, NewsViewHolder>(NewsDiffCallBack()) {
         val item = getItem(position)
         Picasso.get().load(item.image).into(holder.image)
         holder.title.text = item.title
+        holder.itemView.setOnClickListener {
+            onNewsClick?.invoke(item)
+        }
     }
 }

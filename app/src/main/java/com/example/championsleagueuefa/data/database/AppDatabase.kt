@@ -2,18 +2,23 @@ package com.example.championsleagueuefa.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.example.championsleagueuefa.data.database.db_model.FixturesDbModel
 import com.example.championsleagueuefa.data.database.db_model.NewsDbModel
 
 @Database(
-    entities = [NewsDbModel::class],
-    version = 1,
+    entities = [
+        NewsDbModel::class,
+        NewsDbModel::class,
+        FixturesDbModel::class
+    ],
+    version = 2,
     exportSchema = false
 )
-abstract class AppDatabase:RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun getDao():DbDao
+    abstract fun getDao(): DbDao
 
-    companion object{
+    companion object {
         const val DB_NAME = "database.db"
     }
 

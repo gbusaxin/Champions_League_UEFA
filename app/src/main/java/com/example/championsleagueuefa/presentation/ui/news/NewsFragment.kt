@@ -2,10 +2,15 @@ package com.example.championsleagueuefa.presentation.ui.news
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.championsleagueuefa.R
 import com.example.championsleagueuefa.databinding.NewsFragmentBinding
 import com.example.championsleagueuefa.presentation.adapters.news.NewsAdapter
@@ -16,7 +21,7 @@ class NewsFragment : Fragment() {
 
     private var _binding:NewsFragmentBinding?=null
     private val binding get() = _binding!!
-    private val viewModel: NewsViewModel by viewModels()
+    private val viewModel: NewsViewModel by activityViewModels()
     private lateinit var adapter: NewsAdapter
 
     override fun onCreateView(
@@ -33,6 +38,10 @@ class NewsFragment : Fragment() {
         viewModel.getNews.observe(viewLifecycleOwner) {
             adapter.submitList(it)
             binding.recyclerViewNews.adapter = adapter
+        }
+        adapter.onNewsClick = {
+            viewModel.selectNews(it)
+            findNavController().navigate(R.id.action_nav_news_to_newsDetailFragment)
         }
     }
 

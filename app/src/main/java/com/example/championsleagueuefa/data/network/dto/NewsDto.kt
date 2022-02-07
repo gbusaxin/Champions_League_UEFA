@@ -1,4 +1,4 @@
-package com.example.championsleagueuefa.data.network.retrofit.dto
+package com.example.championsleagueuefa.data.network.dto
 
 import com.google.gson.annotations.Expose
 

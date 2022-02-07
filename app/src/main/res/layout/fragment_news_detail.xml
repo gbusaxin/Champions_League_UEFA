@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_50"
+    tools:context=".presentation.ui.news.NewsDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewNewsDetailTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNewsDetailDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:padding="5dp"
+        android:textColor="@color/darkGrey"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewNewsDetailTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewsDetailTitle" />
+
+    <TextView
+        android:id="@+id/textViewNewsDetailSDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="start"
+        android:text="TextView"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNewsDetailTitle"
+        app:layout_constraintStart_toStartOf="@+id/textViewNewsDetailTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewsDetailDate" />
+
+    <ImageView
+        android:id="@+id/imageViewNewsDetailImage"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="12dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewsDetailSDesc"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/textViewNewsDetaildDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="start"
+        android:text="TextView"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNewsDetailSDesc"
+        app:layout_constraintStart_toStartOf="@+id/textViewNewsDetailSDesc"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewNewsDetailImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

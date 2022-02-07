@@ -5,7 +5,11 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.championsleagueuefa.R
 import com.example.championsleagueuefa.databinding.ActivityMainBinding
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Picasso.LoadedFrom
@@ -22,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
         loadBackground()
-//        supportActionBar?.hide()
     }
 
-    fun loadBackground() {
+    private fun loadBackground() {
         try {
             Picasso.get().load(IMAGE_URL).into(object : Target {
                 override fun onBitmapLoaded(bitmap: Bitmap?, from: LoadedFrom?) {
@@ -38,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
-//                    binding.mainActivity.background = placeHolderDrawable
+
                 }
 
             })

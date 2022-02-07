@@ -1,7 +1,7 @@
 package com.example.championsleagueuefa.data.mapper
 
 import com.example.championsleagueuefa.data.database.db_model.NewsDbModel
-import com.example.championsleagueuefa.data.network.retrofit.dto.NewsDto
+import com.example.championsleagueuefa.data.network.dto.NewsDto
 import com.example.championsleagueuefa.domain.pojo.NewsItem
 import com.example.championsleagueuefa.utils.EntityMapper
 import javax.inject.Inject

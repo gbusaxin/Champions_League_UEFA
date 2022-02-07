@@ -7,7 +7,10 @@
         <entry key="app/src/main/res/drawable/shape_news_item.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_text_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2318840579710145" />
+        <entry key="app/src/main/res/layout/fragment_fixtures.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.2318840579710145" />
+        <entry key="app/src/main/res/layout/fragment_news_detail.xml" value="0.24048913043478262" />
+        <entry key="app/src/main/res/layout/fragment_results.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/matches_fragment.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/more_fragment.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/news_fragment.xml" value="0.24048913043478262" />
