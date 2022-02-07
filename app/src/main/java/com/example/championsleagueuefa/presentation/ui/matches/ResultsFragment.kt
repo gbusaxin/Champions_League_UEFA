@@ -28,4 +28,8 @@ class ResultsFragment : Fragment() {
         _binding = null
     }
 
+    companion object{
+        const val FRAGMENT_TITLE = "Результаты"
+    }
+
 }

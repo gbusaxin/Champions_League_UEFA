@@ -5,22 +5,22 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "news_table")
-data class NewsDbModel (
+class NewsDbModel(
 
-    @ColumnInfo(name = "image")
+    @ColumnInfo(name = "n_image")
     val image: String,
 
+    @ColumnInfo(name = "n_title")
     @PrimaryKey
-    @ColumnInfo(name = "title")
     val title: String,
 
-    @ColumnInfo(name = "sDesc")
+    @ColumnInfo(name = "n_sDesc")
     val sDesc: String,
 
-    @ColumnInfo(name = "date")
+    @ColumnInfo(name = "n_date")
     val date: String,
 
-    @ColumnInfo(name = "description")
+    @ColumnInfo(name = "n_description")
     val description: String
 
 )

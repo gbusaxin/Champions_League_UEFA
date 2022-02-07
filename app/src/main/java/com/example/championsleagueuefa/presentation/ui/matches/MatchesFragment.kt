@@ -24,8 +24,9 @@ class MatchesFragment : Fragment() {
         val tabLayout = binding.tabLayout
         val viewPager = binding.viewPager
 
-        val fragmentList = listOf<Fragment>(
-            ResultsFragment()
+        val fragmentList = listOf(
+            ResultsFragment(),
+            FixturesFragment()
         )
 
         val adapter = MatchViewPagerAdapter(
@@ -38,13 +39,11 @@ class MatchesFragment : Fragment() {
 
         TabLayoutMediator(
             tabLayout,
-            viewPager,
-            object : TabLayoutMediator.TabConfigurationStrategy {
-                override fun onConfigureTab(tab: TabLayout.Tab, position: Int) {
-                    tab.text = fragmentList[position].tag
-                }
+            viewPager
+        ) { tab, position ->
+            tab.text = fragmentList[position].tag
 
-            }).attach()
+        }.attach()
 
         return binding.root
     }

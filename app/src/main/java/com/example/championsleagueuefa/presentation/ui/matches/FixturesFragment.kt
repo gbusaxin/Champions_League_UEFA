@@ -27,4 +27,8 @@ class FixturesFragment : Fragment() {
         _binding = null
     }
 
+    companion object{
+        const val FRAGMENT_TITLE = "Скоро"
+    }
+
 }

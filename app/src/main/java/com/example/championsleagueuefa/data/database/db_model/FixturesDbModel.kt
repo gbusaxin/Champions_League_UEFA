@@ -2,9 +2,14 @@ package com.example.championsleagueuefa.data.database.db_model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "fixtures_table")
-class FixturesDbModel(
+data class FixturesDbModel(
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "fake_pk")
+    val id:Int,
 
     @ColumnInfo(name = "f_team1")
     val team1: String,

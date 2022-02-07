@@ -13,7 +13,8 @@ class FixturesMapper @Inject constructor():EntityMapper<FixtureItem,FixturesDbMo
         team2 = dto.team2?:"",
         image2 = dto.image2?:"",
         time = dto.time?:"",
-        date = dto.date?:""
+        date = dto.date?:"",
+        id = 0
     )
 
     override fun mapDbModelToEntity(dbModel: FixturesDbModel) = FixtureItem (

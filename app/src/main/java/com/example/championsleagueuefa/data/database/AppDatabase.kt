@@ -4,14 +4,15 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.championsleagueuefa.data.database.db_model.FixturesDbModel
 import com.example.championsleagueuefa.data.database.db_model.NewsDbModel
+import com.example.championsleagueuefa.data.database.db_model.ResultDbModel
 
 @Database(
     entities = [
         NewsDbModel::class,
-        NewsDbModel::class,
+        ResultDbModel::class,
         FixturesDbModel::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

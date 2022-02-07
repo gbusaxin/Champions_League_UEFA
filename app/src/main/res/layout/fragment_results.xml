@@ -7,7 +7,6 @@
     tools:context=".presentation.ui.matches.ResultsFragment"
     android:padding="3dp">
 
-
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/recycler_view_results"
        android:layout_width="match_parent"
