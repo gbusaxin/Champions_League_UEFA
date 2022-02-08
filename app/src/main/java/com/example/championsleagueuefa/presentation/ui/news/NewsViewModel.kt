@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    private val repository: NewsRepositoryImpl
+     repository: NewsRepositoryImpl
 ):ViewModel(){
 
     private val getNewsUseCase = GetNewsUseCase(repository)

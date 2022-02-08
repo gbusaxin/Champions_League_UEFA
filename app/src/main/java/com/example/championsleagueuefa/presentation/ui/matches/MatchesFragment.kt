@@ -15,6 +15,11 @@ class MatchesFragment : Fragment() {
     private var _binding: MatchesFragmentBinding? = null
     private val binding get() = _binding!!
 
+    private val namesOfFragments = listOf(
+        "Результаты",
+        "Скоро"
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +36,7 @@ class MatchesFragment : Fragment() {
 
         val adapter = MatchViewPagerAdapter(
             fragmentList,
-            requireActivity().supportFragmentManager,
+            childFragmentManager,
             lifecycle
         )
 
@@ -41,8 +46,7 @@ class MatchesFragment : Fragment() {
             tabLayout,
             viewPager
         ) { tab, position ->
-            tab.text = fragmentList[position].tag
-
+            tab.text = namesOfFragments[position]
         }.attach()
 
         return binding.root

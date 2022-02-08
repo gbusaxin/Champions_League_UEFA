@@ -5,14 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.championsleagueuefa.R
 import com.example.championsleagueuefa.databinding.FragmentFixturesBinding
+import com.example.championsleagueuefa.presentation.adapters.matches.FixturesAdapter
 
 
 class FixturesFragment : Fragment() {
 
     private var _binding:FragmentFixturesBinding?=null
     private val binding get() = _binding!!
+    private val viewModel:MatchesViewModel by activityViewModels()
+    private lateinit var adapter:FixturesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,6 +24,16 @@ class FixturesFragment : Fragment() {
     ): View? {
         _binding = FragmentFixturesBinding.inflate(inflater,container,false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val rvFixtures = binding.recyclerViewFixtures
+        adapter = FixturesAdapter()
+        viewModel.getFixtures.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+            rvFixtures.adapter = adapter
+        }
     }
 
     override fun onDestroy() {
