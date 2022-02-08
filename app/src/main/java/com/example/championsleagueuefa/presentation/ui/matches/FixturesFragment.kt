@@ -1,28 +1,31 @@
 package com.example.championsleagueuefa.presentation.ui.matches
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.championsleagueuefa.R
 import com.example.championsleagueuefa.databinding.FragmentFixturesBinding
 import com.example.championsleagueuefa.presentation.adapters.matches.FixturesAdapter
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class FixturesFragment : Fragment() {
 
-    private var _binding:FragmentFixturesBinding?=null
+    private var _binding: FragmentFixturesBinding? = null
     private val binding get() = _binding!!
-    private val viewModel:MatchesViewModel by activityViewModels()
-    private lateinit var adapter:FixturesAdapter
+    private val viewModel: MatchesViewModel by activityViewModels()
+    private lateinit var adapter: FixturesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFixturesBinding.inflate(inflater,container,false)
+        _binding = FragmentFixturesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -30,7 +33,7 @@ class FixturesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val rvFixtures = binding.recyclerViewFixtures
         adapter = FixturesAdapter()
-        viewModel.getFixtures.observe(viewLifecycleOwner){
+        viewModel.getFixtures.observe(viewLifecycleOwner) {
             adapter.submitList(it)
             rvFixtures.adapter = adapter
         }
@@ -38,11 +41,8 @@ class FixturesFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        viewModel.deleteAllFixtures()
         _binding = null
-    }
-
-    companion object{
-        const val FRAGMENT_TITLE = "Скоро"
     }
 
 }

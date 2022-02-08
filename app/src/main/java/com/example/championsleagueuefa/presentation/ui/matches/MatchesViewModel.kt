@@ -3,11 +3,9 @@ package com.example.championsleagueuefa.presentation.ui.matches
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.championsleagueuefa.data.repository.MatchRepositoryImpl
-import com.example.championsleagueuefa.domain.use_cases.GetFixturesUseCase
-import com.example.championsleagueuefa.domain.use_cases.GetResultUseCase
-import com.example.championsleagueuefa.domain.use_cases.LoadFixturesUseCase
-import com.example.championsleagueuefa.domain.use_cases.LoadResultUseCase
+import com.example.championsleagueuefa.domain.use_cases.*
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,9 +18,16 @@ class MatchesViewModel @Inject constructor(
     private val getFixturesUseCase = GetFixturesUseCase(repository)
     private val loadResultUseCase = LoadResultUseCase(repository)
     private val loadFixturesUseCase = LoadFixturesUseCase(repository)
+    private val deleteAllFixturesUseCase = DeleteAllFixturesUseCase(repository)
 
     val getResult = getResultUseCase()
     val getFixtures = getFixturesUseCase()
+
+    fun deleteAllFixtures() {
+        viewModelScope.launch(Dispatchers.IO){
+            deleteAllFixturesUseCase()
+        }
+    }
 
     init {
         viewModelScope.launch {
@@ -30,4 +35,5 @@ class MatchesViewModel @Inject constructor(
             loadFixturesUseCase()
         }
     }
+
 }

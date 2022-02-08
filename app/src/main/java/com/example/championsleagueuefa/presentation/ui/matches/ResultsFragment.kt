@@ -22,7 +22,6 @@ class ResultsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentResultsBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -39,10 +38,6 @@ class ResultsFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    companion object {
-        const val FRAGMENT_TITLE = "Результаты"
     }
 
 }

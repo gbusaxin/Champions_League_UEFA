@@ -9,6 +9,8 @@ interface MatchesRepository {
     fun getFixtures(): LiveData<List<FixtureItem>>
     fun getResults(): LiveData<List<ResultItem>>
 
+    suspend fun deleteAllFixtures()
+
     suspend fun loadFixtures()
     suspend fun loadResults()
 

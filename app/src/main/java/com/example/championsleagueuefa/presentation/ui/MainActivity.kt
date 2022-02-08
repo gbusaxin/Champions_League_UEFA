@@ -7,10 +7,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.championsleagueuefa.R
 import com.example.championsleagueuefa.databinding.ActivityMainBinding
+import com.example.championsleagueuefa.presentation.ui.matches.MatchesViewModel
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Picasso.LoadedFrom
 import com.squareup.picasso.Target

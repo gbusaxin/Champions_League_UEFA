@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.championsleagueuefa.data.database.db_model.FixturesDbModel
+import com.example.championsleagueuefa.data.database.db_model.GroupDbModel
 import com.example.championsleagueuefa.data.database.db_model.NewsDbModel
 import com.example.championsleagueuefa.data.database.db_model.ResultDbModel
 
@@ -27,6 +28,16 @@ interface DbDao {
     @Query("SELECT * FROM fixtures_table")
     fun getFixtures(): LiveData<List<FixturesDbModel>>
 
+    @Query("DELETE FROM fixtures_table")
+    suspend fun deleteAllFixtures()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFixtures(fixtures: List<FixturesDbModel>)
+
+    @Query("SELECT * FROM groups_table")
+    fun getGroups(): LiveData<List<GroupDbModel>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertGroups(groups: List<GroupDbModel>)
+
 }

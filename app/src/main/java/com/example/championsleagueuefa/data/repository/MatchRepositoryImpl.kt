@@ -28,6 +28,10 @@ class MatchRepositoryImpl constructor(
         }
     }
 
+    override suspend fun deleteAllFixtures() {
+        dao.deleteAllFixtures()
+    }
+
     override suspend fun loadFixtures() {
         try {
             val dto = apiService.loadFixtures()
