@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.2318840579710145" />
         <entry key="app/src/main/res/layout/fragment_news_detail.xml" value="0.24048913043478262" />
         <entry key="app/src/main/res/layout/fragment_results.xml" value="0.24048913043478262" />
+        <entry key="app/src/main/res/layout/group_child_item.xml" value="0.375" />
         <entry key="app/src/main/res/layout/group_parent_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/groups_fragment.xml" value="0.18135245901639344" />
         <entry key="app/src/main/res/layout/item_fixtures.xml" value="0.335" />
