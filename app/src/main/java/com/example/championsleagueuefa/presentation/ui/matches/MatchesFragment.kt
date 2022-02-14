@@ -9,7 +9,9 @@ import com.example.championsleagueuefa.databinding.MatchesFragmentBinding
 import com.example.championsleagueuefa.presentation.adapters.matches.MatchViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MatchesFragment : Fragment() {
 
     private var _binding: MatchesFragmentBinding? = null

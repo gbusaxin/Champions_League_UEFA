@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageViewNewsItem"
@@ -32,4 +33,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageViewNewsItem"
         app:layout_constraintEnd_toEndOf="@+id/imageViewNewsItem"
         app:layout_constraintStart_toStartOf="@+id/imageViewNewsItem" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

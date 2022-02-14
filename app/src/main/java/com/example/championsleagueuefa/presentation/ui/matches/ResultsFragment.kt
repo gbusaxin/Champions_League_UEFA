@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.championsleagueuefa.databinding.FragmentResultsBinding
 import com.example.championsleagueuefa.presentation.adapters.matches.ResultAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ResultsFragment : Fragment() {
 
     private var _binding: FragmentResultsBinding? = null

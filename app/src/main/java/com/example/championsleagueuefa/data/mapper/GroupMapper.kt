@@ -5,8 +5,9 @@ import com.example.championsleagueuefa.data.network.dto.GroupDto
 import com.example.championsleagueuefa.domain.pojo.GroupItem
 import com.example.championsleagueuefa.utils.EntityMapper
 import java.util.*
+import javax.inject.Inject
 
-class GroupMapper : EntityMapper<GroupItem, GroupDbModel, GroupDto> {
+class GroupMapper @Inject constructor() : EntityMapper<GroupItem, GroupDbModel, GroupDto> {
     override fun mapDtoToDbModel(dto: GroupDto) = GroupDbModel(
         group = dto.group ?: "",
         teams = dto.teams ?: Collections.emptyList(),

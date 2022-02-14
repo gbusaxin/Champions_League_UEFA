@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.championsleagueuefa.databinding.FragmentFixturesBinding
 import com.example.championsleagueuefa.presentation.adapters.matches.FixturesAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class FixturesFragment : Fragment() {
 
     private var _binding: FragmentFixturesBinding? = null
@@ -41,7 +42,7 @@ class FixturesFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        viewModel.deleteAllFixtures()
+//        viewModel.deleteAllFixtures()
         _binding = null
     }
 

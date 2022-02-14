@@ -14,8 +14,8 @@ class GroupsViewModel @Inject constructor(
     repository: GroupsRepositoryImpl
 ) : ViewModel() {
 
-    val getGroupsUseCase = GetGroupsUseCase(repository)
-    val loadGroupsUseCase = LoadGroupsUseCase(repository)
+    private val getGroupsUseCase = GetGroupsUseCase(repository)
+    private val loadGroupsUseCase = LoadGroupsUseCase(repository)
 
     val getGroups = getGroupsUseCase()
 

@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RetrofitModule {
+object RetrofitModule {
 
     @Singleton
     @Provides
@@ -39,7 +39,5 @@ class RetrofitModule {
             .create(ApiService::class.java)
     }
 
-    companion object {
-        private const val BASE_URL = "http://95.217.132.144/uefa/"
-    }
+    private const val BASE_URL = "http://95.217.132.144/uefa/"
 }

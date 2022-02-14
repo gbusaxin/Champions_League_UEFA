@@ -1,10 +1,9 @@
 package com.example.championsleagueuefa.data.di
 
 import com.example.championsleagueuefa.data.database.DbDao
-import com.example.championsleagueuefa.data.mapper.FixturesMapper
-import com.example.championsleagueuefa.data.mapper.ResultMapper
+import com.example.championsleagueuefa.data.mapper.StatisticMapper
 import com.example.championsleagueuefa.data.network.retrofit.ApiService
-import com.example.championsleagueuefa.data.repository.MatchRepositoryImpl
+import com.example.championsleagueuefa.data.repository.StatisticRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,16 +12,16 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object MatchRepositoryModule {
+object StatisticRepositoryModule {
 
     @Singleton
     @Provides
-    fun provideMatchesRepository(
+    fun provideStatisticRepository(
         dao: DbDao,
         apiService: ApiService,
-        resultMapper: ResultMapper,
-        fixturesMapper: FixturesMapper
-    ): MatchRepositoryImpl {
-        return MatchRepositoryImpl(dao, apiService,resultMapper, fixturesMapper )
+        mapper: StatisticMapper
+    ): StatisticRepositoryImpl {
+        return StatisticRepositoryImpl(dao, apiService, mapper)
     }
+
 }

@@ -34,11 +34,6 @@
         tools:layout="@layout/players_fragment"/>
 
     <fragment
-        android:id="@+id/nav_more"
-        android:name="com.example.championsleagueuefa.presentation.ui.more.MoreFragment"
-        android:label="@string/more"
-        tools:layout="@layout/more_fragment"/>
-    <fragment
         android:id="@+id/newsDetailFragment"
         android:name="com.example.championsleagueuefa.presentation.ui.news.NewsDetailFragment"
         android:label="@string/news"
@@ -47,5 +42,11 @@
             android:id="@+id/action_newsDetailFragment_to_nav_news"
             app:popUpTo="@id/nav_news" />
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_more"
+        android:name="com.example.championsleagueuefa.presentation.ui.more.SettingsFragment"
+        android:label="SettingsFragment" />
+
 
 </navigation>

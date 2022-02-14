@@ -23,14 +23,15 @@ class MatchesViewModel @Inject constructor(
     val getResult = getResultUseCase()
     val getFixtures = getFixturesUseCase()
 
-    fun deleteAllFixtures() {
-        viewModelScope.launch(Dispatchers.IO){
+    private fun deleteAllFixtures() {
+        viewModelScope.launch(Dispatchers.IO) {
             deleteAllFixturesUseCase()
         }
     }
 
     init {
         viewModelScope.launch {
+            deleteAllFixtures()
             loadResultUseCase()
             loadFixturesUseCase()
         }

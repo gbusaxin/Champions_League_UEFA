@@ -1,4 +1,4 @@
-package com.example.championsleagueuefa.data.database
+package com.example.championsleagueuefa.data.database.converters
 
 import androidx.room.TypeConverter
 import com.example.championsleagueuefa.domain.pojo.GameItem
@@ -8,7 +8,7 @@ import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
 import java.util.*
 
-class DbConverter {
+class GroupConverter {
     @TypeConverter
     fun toListTeamsFromJson(team: String): List<TeamItem> {
         if (team == null) return Collections.emptyList()

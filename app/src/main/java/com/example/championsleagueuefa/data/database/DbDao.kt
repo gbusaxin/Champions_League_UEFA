@@ -5,10 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.championsleagueuefa.data.database.db_model.FixturesDbModel
-import com.example.championsleagueuefa.data.database.db_model.GroupDbModel
-import com.example.championsleagueuefa.data.database.db_model.NewsDbModel
-import com.example.championsleagueuefa.data.database.db_model.ResultDbModel
+import com.example.championsleagueuefa.data.database.db_model.*
 
 @Dao
 interface DbDao {
@@ -39,5 +36,11 @@ interface DbDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertGroups(groups: List<GroupDbModel>)
+
+    @Query("SELECT * FROM statistic_table")
+    fun getStatistic(): LiveData<List<StatisticDbModel>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertStatistic(statistic: List<StatisticDbModel>)
 
 }
