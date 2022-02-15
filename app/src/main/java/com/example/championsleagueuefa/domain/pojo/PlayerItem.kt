@@ -1,9 +1,10 @@
 package com.example.championsleagueuefa.domain.pojo
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-
+@Keep
 data class PlayerItem(
     @SerializedName("name")
     @Expose

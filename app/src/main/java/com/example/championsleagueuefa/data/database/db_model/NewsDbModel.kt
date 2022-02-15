@@ -1,9 +1,10 @@
 package com.example.championsleagueuefa.data.database.db_model
 
+import androidx.annotation.Keep
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
+@Keep
 @Entity(tableName = "news_table")
 class NewsDbModel(
 

@@ -1,6 +1,7 @@
 package com.example.championsleagueuefa.presentation.ui
 
 import android.util.Log
+import android.webkit.WebSettings
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,6 +22,8 @@ class WebViewViewModel @Inject constructor(
     val res: LiveData<ResponseDto>
         get() = _res
 
+    fun setSettings(settings: WebSettings) = repository.setWebViewSettings(settings)
+
     init {
         sendLocale()
     }
@@ -28,7 +31,7 @@ class WebViewViewModel @Inject constructor(
     private fun sendLocale() = viewModelScope.launch {
         repository.sendLocale().let {
             _res.value = it
-            Log.d("CHECK_POST_VALUE",it.response?:"NULL")
+            Log.d("CHECK_POST_VALUE", it.response ?: "NULL")
         }
     }
 }

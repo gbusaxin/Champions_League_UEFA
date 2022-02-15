@@ -3,9 +3,12 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id("dagger.hilt.android.plugin")
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 }
 
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'
 
 android {
     compileSdk 31
@@ -16,16 +19,25 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                onesignal_app_id : '3aea2af5-32ae-4489-9585-ec1c64d38879',
+                onesignal_google_project_number:'REMOTE'
+        ]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -39,6 +51,12 @@ android {
 }
 
 dependencies {
+
+    //OneSignal
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
 
     //Hilt
     implementation("com.google.dagger:hilt-android:2.38.1")
