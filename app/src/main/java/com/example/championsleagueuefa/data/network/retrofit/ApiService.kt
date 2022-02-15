@@ -24,6 +24,6 @@ interface ApiService {
     suspend fun loadStatistic(): List<StatisticDto>
 
     @POST("splash.php")
-    fun sendLocale(@Body locale: RequestDto): Call<ResponseDto>
+    suspend fun sendLocale(@Body locale: RequestDto): ResponseDto
 
 }

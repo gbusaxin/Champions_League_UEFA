@@ -1,4 +1,4 @@
-package com.example.championsleagueuefa.presentation.ui
+package com.example.championsleagueuefa.utils
 
 import android.content.Context
 import android.graphics.Bitmap

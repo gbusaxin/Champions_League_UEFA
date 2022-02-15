@@ -1,7 +1,7 @@
 package com.example.championsleagueuefa.data.di
 
 import com.example.championsleagueuefa.data.network.retrofit.ApiService
-import com.example.championsleagueuefa.data.repository.RepositoryWebView
+import com.example.championsleagueuefa.data.repository.WebViewRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,14 +10,12 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoryWebViewModule {
+object WebViewRepositoryModule {
 
     @Singleton
     @Provides
-    fun provideRepositoryWebView(
-        apiService: ApiService
-    ): RepositoryWebView {
-        return RepositoryWebView(apiService)
+    fun provideWebViewRepository(apiService: ApiService): WebViewRepository {
+        return WebViewRepository(apiService)
     }
 
 }
